@@ -43,3 +43,7 @@ function setGameElements() {
   }
 }
 setGameElements();
+// DOM Variables
+var playerPointsElem = document.getElementById('js-playerPoints'),
+    playerNameElem = document.getElementById('js-playerName'),
+    computerPointsElem = document.getElementById('js-computerPoints');
