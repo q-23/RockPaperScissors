@@ -56,7 +56,7 @@ function newGame() {
     setGameElements();
 
     playerNameElem.innerHTML = player.name;
-    // setGamePoints(); // This function has not been created yet
+   setGamePoints();
   }
 
 }
@@ -104,4 +104,20 @@ function checkRoundWinner(playerPick, computerPick) {
         computer.score++;
     }
 
+}
+//Essential game mechanics functions
+function playerPick(playerPick) {
+    var computerPick = getComputerPick();
+
+    playerPickElem.innerHTML = playerPick;
+    computerPickElem.innerHTML = computerPick;
+    checkRoundWinner(playerPick, computerPick);
+    setGameElements();
+    setGamePoints();
+    checkGameWinner();
+   }
+
+function setGamePoints() {
+    playerPointsElem.innerHTML = player.score;
+    computerPointsElem.innerHTML = computer.score;
 }
