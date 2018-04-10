@@ -21,3 +21,7 @@ var gameState = 'notStarted', //started //ended
 	computer = {
 		score: 0
 	};
+// variables linking game elements
+var newGameElem = document.getElementById('js-newGameElement'),
+    pickElem = document.getElementById('js-playerPickElement'),
+    resultsElem = document.getElementById('js-resultsTableElement');
