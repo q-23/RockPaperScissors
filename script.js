@@ -47,3 +47,16 @@ setGameElements();
 var playerPointsElem = document.getElementById('js-playerPoints'),
     playerNameElem = document.getElementById('js-playerName'),
     computerPointsElem = document.getElementById('js-computerPoints');
+//New game function
+function newGame() {
+  player.name = prompt('Please enter your name', 'imię gracza');
+  if (player.name) {
+    player.score = computer.score = 0;
+    gameState = 'started';
+    setGameElements();
+
+    playerNameElem.innerHTML = player.name;
+    // setGamePoints(); // This function has not been created yet
+  }
+
+}
