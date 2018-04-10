@@ -40,7 +40,7 @@ function setGameElements() {
         newGameElem.style.display = 'block';
         pickElem.style.display = 'none';
         resultsElem.style.display = 'none';
-  }
+    }
 }
 setGameElements();
 // DOM Variables
@@ -107,17 +107,27 @@ function checkRoundWinner(playerPick, computerPick) {
 }
 //Essential game mechanics functions
 function playerPick(playerPick) {
+	checkGameWinner();
     var computerPick = getComputerPick();
-
     playerPickElem.innerHTML = playerPick;
     computerPickElem.innerHTML = computerPick;
     checkRoundWinner(playerPick, computerPick);
     setGameElements();
     setGamePoints();
-    checkGameWinner();
-   }
+}
 
 function setGamePoints() {
     playerPointsElem.innerHTML = player.score;
     computerPointsElem.innerHTML = computer.score;
+}
+//Game winner checking function
+function checkGameWinner() {
+	if (player.score == 10) {
+		gameState = 'ended';
+		alert('You are the winner!');
+	}
+	if (computer.score == 10) {
+		gameState = 'ended';
+		alert('Computer is the winner!');
+	}
 }
